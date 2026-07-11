@@ -1,40 +1,34 @@
 class BankAccount:
-    def __init__(self, account_number, account_holder, balance=0):
-        self.account_number = account_number
-        self.account_holder = account_holder
-        self.balance = balance
+    def __init__(self, name, balance):
+        self.name = name
+        self.__balance = balance
 
     def deposit(self, amount):
         if amount > 0:
-            self.balance += amount
-            print(f"Deposited {amount}. New balance is {self.balance}.")
-        else:
-            print("Deposit amount must be positive.")
+            self.__balance += amount
+            print("Deposited:", amount)
 
     def withdraw(self, amount):
-        if 0 < amount <= self.balance:
-            self.balance -= amount
-            print(f"Withdrew {amount}. New balance is {self.balance}.")
+        if amount > self.__balance:
+            print("Insufficient balance")
         else:
-            print("Withdrawal amount must be positive and less than or equal to the current balance.")
+            self.__balance -= amount
+            print("Withdrawn:", amount)
 
     def get_balance(self):
-        return self.balance
+        return self.__balance
 
-    def __str__(self):
-        return f"Account Number: {self.account_number}, Account Holder: {self.account_holder}, Balance: {self.balance}"
-    
 
-class SavingAccount(BankAccount):
+class SavingsAccount(BankAccount):
     def add_interest(self):
         interest = self.get_balance() * 0.05
         self.deposit(interest)
-        print("interest added")
+        print("Interest added")
 
-acc = SavingAccount(123,"Abdulah")
 
-acc.deposit(5000)
-acc.withdraw(100)
+acc = SavingsAccount("Ali", 1000)
+
+acc.deposit(500)
+acc.withdraw(200)
 acc.add_interest()
-
-print("Final balance", acc.get_balance())
+print("Final Balance:", acc.get_balance())
