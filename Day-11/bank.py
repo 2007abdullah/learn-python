@@ -20,3 +20,4 @@ class bankaccount:
 user1= bankaccount("Abdullah",1000)
 user1.deposit(500)
 user1.withdraw(200) 
+
