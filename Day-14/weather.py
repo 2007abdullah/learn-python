@@ -12,6 +12,7 @@ temp = data["current_condition"][0]["temp_C"]
 weather = data["current_condition"][0]["weatherDesc"][0]["value"]
 now = datetime.datetime.now()
 
+
 print(now)
 print(f"\n🌍 Weather Report for {city}")
 print(f"🌡️ Temperature: {temp}°C")
