@@ -63,3 +63,4 @@ for file in os.listdir(path):
 print(f"\n✅ Total files organized: {moved_files}")
 print("🎉 Folder cleaned successfully!")
 
+
