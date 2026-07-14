@@ -64,3 +64,4 @@ print(f"\n✅ Total files organized: {moved_files}")
 print("🎉 Folder cleaned successfully!")
 
 
+
