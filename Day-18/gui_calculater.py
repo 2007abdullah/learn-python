@@ -11,12 +11,12 @@ def calculate():
 
 root = tk.Tk()
 root.title("Calculator")
-root.geometry("300x250")
+root.geometry("500x450")
 
-entry1 = tk.Entry(root)
+entry1 = tk.Entry(root, width=70)
 entry1.pack()
 
-entry2 = tk.Entry(root)
+entry2 = tk.Entry(root, width=70)
 entry2.pack()
 
 btn = tk.Button(root, text="Add", command=calculate)
